@@ -156,7 +156,7 @@ export async function initDb() {
     'admin-uid',
     'demo-tenant',
     'Administrador',
-    'admin',
+    'admin@admin.com',
     'owner',
     true
   ]);

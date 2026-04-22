@@ -28,7 +28,7 @@ export default function LoginPage() {
 
         try {
             // Admin Backdoor / Seed Login
-            if (email === 'admin' && password === 'admin123') {
+            if (email === 'admin@admin.com' && password === 'admin123') {
                 handleLoginSuccess({ uid: 'admin-uid' });
                 return;
             }

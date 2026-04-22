@@ -227,7 +227,7 @@ const requireAuth = async (req: express.Request, res: express.Response, next: ex
     // Mock Admin Bypass
     if (token === 'uid_admin-uid') {
         // @ts-ignore
-        req.user = { uid: 'admin-uid', email: 'admin' };
+        req.user = { uid: 'admin-uid', email: 'admin@admin.com' };
         return next();
     }
 
