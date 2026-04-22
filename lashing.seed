@@ -1,0 +1,50 @@
+{
+  "services": [
+    {
+      "name": "Pestañas Clásicas",
+      "description": "Efecto natural, una extensión por cada pestaña natural.",
+      "duration_minutes": 60,
+      "estimated_price": 500,
+      "required_advance": 100,
+      "category": "Extensiones"
+    },
+    {
+      "name": "Volumen Ruso",
+      "description": "Efecto glamuroso y tupido, abanicos hechos a mano.",
+      "duration_minutes": 120,
+      "estimated_price": 900,
+      "required_advance": 200,
+      "category": "Extensiones"
+    },
+    {
+      "name": "Pestañas Híbridas",
+      "description": "Mezcla perfecta entre clásicas y volumen.",
+      "duration_minutes": 90,
+      "estimated_price": 700,
+      "required_advance": 150,
+      "category": "Extensiones"
+    },
+    {
+      "name": "Lifting de Pestañas",
+      "description": "Levantamiento de pestaña natural con tinte incluido.",
+      "duration_minutes": 60,
+      "estimated_price": 450,
+      "required_advance": 100,
+      "category": "Tratamientos"
+    }
+  ],
+  "staff": [
+    {
+      "name": "Ana Lash",
+      "role": "Especialista Senior",
+      "specialty": "Volumen Ruso",
+      "slug": "ana"
+    },
+    {
+      "name": "Lucia Reyes",
+      "role": "Master Lashista",
+      "specialty": "Híbridas y Diseño",
+      "slug": "lucia"
+    }
+  ]
+}
