@@ -44,6 +44,24 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     const [salonName, setSalonName] = useState<string>('NailFlow');
 
     useEffect(() => {
+        // Check for Mock Admin Session first
+        const mockToken = document.cookie.split('; ').find(row => row.startsWith('mock_auth_token='));
+        if (mockToken && mockToken.includes('uid_admin-uid')) {
+            setIsAuth(true);
+            setUserRole('owner');
+            setTenantId('demo-tenant');
+            setDomain('lasher-book.diabolicalservices.tech');
+            // Fetch tenant details for branding
+            api.getTenantById('demo-tenant').then(t => {
+                if (t) {
+                    setLogoUrl(t.branding?.logo_url || null);
+                    setPhotoUrl(t.branding?.photo_url || null);
+                    setSalonName(t.name || 'Lashing-book');
+                }
+            });
+            return;
+        }
+
         const unsubscribe = onAuthStateChanged(auth, async (user) => {
             if (!user) {
                 router.replace('/login');
