@@ -47,7 +47,7 @@ export default function SignupPage() {
                 <div className="bg-white shadow w-full rounded-2xl border border-cream-dark p-8 mb-6">
                     <div className="text-center mb-8">
                         <h1 className="font-serif text-3xl font-semibold mb-2">Crea tu cuenta</h1>
-                        <p className="text-nf-gray text-sm font-medium">Administrador NailFlow</p>
+                        <p className="text-nf-gray text-sm font-medium">Administrador Lashing-book</p>
                     </div>
 
                     {error && (

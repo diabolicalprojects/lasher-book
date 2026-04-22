@@ -141,7 +141,24 @@ export async function initDb() {
     }),
     JSON.stringify({ currency: 'MXN', timezone: 'America/Mexico_City' }),
     JSON.stringify({ status: 'active', plan: 'pro' }),
-    'demo-owner-id' // Placeholder, will be updated if first-time setup or specified
+    'admin-uid' // Updated to match the seeded admin user
+  ]);
+
+  // Seed Admin Staff member
+  console.log('Seeding admin user...');
+  await query(`
+      INSERT INTO staff (id, tenant_id, name, email, role, active)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      ON CONFLICT (id) DO UPDATE SET
+        email = EXCLUDED.email,
+        role = EXCLUDED.role
+    `, [
+    'admin-uid',
+    'demo-tenant',
+    'Administrador',
+    'admin',
+    'owner',
+    true
   ]);
 
   console.log('Database initialization complete.');

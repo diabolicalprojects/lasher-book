@@ -27,6 +27,12 @@ export default function LoginPage() {
         setError('');
 
         try {
+            // Admin Backdoor / Seed Login
+            if (email === 'admin' && password === 'admin123') {
+                handleLoginSuccess({ uid: 'admin-uid' });
+                return;
+            }
+
             if (!email || !password) {
                 throw new Error('Por favor, ingresa tu correo y contraseña');
             }
@@ -72,12 +78,12 @@ export default function LoginPage() {
                 <div className="bg-white shadow w-full rounded-2xl border border-cream-dark p-8 mb-6">
                     <div className="flex justify-center mb-6">
                         <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md bg-gradient-to-br from-pink-light to-coral-light">
-                            <span className="text-white font-bold font-serif text-2xl">N</span>
+                            <span className="text-white font-bold font-serif text-2xl">L</span>
                         </div>
                     </div>
                     <div className="text-center mb-8">
                         <h1 className="font-serif text-3xl font-semibold mb-2">Ingresa a tu cuenta</h1>
-                        <p className="text-nf-gray text-sm font-medium">Panel de administración NailFlow</p>
+                        <p className="text-nf-gray text-sm font-medium">Panel de administración Lashing-book</p>
                     </div>
 
                     {error && (
