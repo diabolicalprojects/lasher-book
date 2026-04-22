@@ -36,6 +36,13 @@ const fetchApi = async (path: string, options: RequestInit = {}, domain?: string
             } catch (e) {
                 console.warn('Failed to get auth token', e);
             }
+        } else {
+            // Check for mock token if no Firebase user
+            const mockToken = document.cookie.split('; ').find(row => row.startsWith('mock_auth_token='));
+            if (mockToken) {
+                const tokenValue = mockToken.split('=')[1];
+                headers.set('Authorization', `Bearer ${tokenValue}`);
+            }
         }
     } else if (domain) {
         headers.set('x-tenant-domain', domain);
